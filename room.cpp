@@ -6,6 +6,7 @@ room::room(){
     east_room = nullptr;
     west_room = nullptr;
     room_name = "empty name";
+    room_desc = "empty room";
 }
 room::room(std::string room_name){
     north_room = nullptr;
@@ -14,8 +15,17 @@ room::room(std::string room_name){
     west_room = nullptr;
     this->room_name = room_name;
 }
+room::~room(){
+    delete north_room;
+    delete south_room;
+    delete east_room;
+    delete west_room;
+}
 std::string room::get_room_name(){
     return room_name;
+}
+std::string room::get_room_desc(){
+    return room_desc;
 }
 room* room::get_north_room(){
     return north_room;
@@ -44,6 +54,9 @@ void room::set_west_room(room *w){
 }
 void room::set_room_name(std::string name){
     this->room_name = name;
+}
+void room::set_room_desc(std::string desc){
+    this->room_desc = desc;
 }
 
 void room::add_north_room(){

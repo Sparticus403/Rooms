@@ -11,10 +11,12 @@ private:
     room* west_room;
 
     std::string room_name;
+    std::string room_desc;
 
 public:
     room();
     room(std::string room_name);
+    ~room();
 
     // getters
     room* get_north_room();
@@ -22,6 +24,7 @@ public:
     room* get_east_room();
     room* get_west_room();
     std::string get_room_name();
+    std::string get_room_desc();
 
     // setters
     void set_north_room(room* n);
@@ -29,6 +32,7 @@ public:
     void set_east_room(room* e);
     void set_west_room(room* w);
     void set_room_name(std::string name);
+    void set_room_desc(std::string desc);
 
     // additional methods
     void add_north_room();
